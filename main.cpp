@@ -47,7 +47,10 @@ int main() {
         if ((ballX + ballRadius >= screenWidth) || (ballX - ballRadius <= 0)) {
             ballSpeedX = -ballSpeedX;
         }
-        if ((ballY + ballRadius >= screenHeight) || (ballY - ballRadius <= 0)) {
+        if (ballY + ballRadius >= screenHeight) {
+            ballSpeedY = -ballSpeedY;
+        }
+        if (ballY - ballRadius <= 0) {
             ballSpeedY = -ballSpeedY;
         }
 
