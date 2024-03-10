@@ -13,10 +13,12 @@ public:
 
     Paddle(float posX, float posY, int w, int h, int spd);
 
-    void MoveUp();
-    void MoveDown();
+    void Move(bool isLeftPaddle);
+
+    void Move();
+    void ClampPosition(float minY, float maxY);
     void Draw();
+    void Reset(float posX, float posY, int w, int h, int spd);
 };
 
-#endif 
-
+#endif

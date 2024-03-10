@@ -2,20 +2,24 @@
 #define BALL_H
 
 #include "raylib.h"
+#include "Paddle.h"
 
 class Ball {
 public:
     float x;
     float y;
-    int radius;
-    int speedX;
-    int speedY;
+    float radius;
+    float speedX;
+    float speedY;
 
-    Ball(float posX, float posY, int rad, int spdX, int spdY);
+    Ball(float posX, float posY, float rad, float spdX, float spdY);
 
     void Move();
-    void CheckCollisionWithScreen(float screenWidth, float screenHeight);
+    void CheckCollisionWithScreen(int screenWidth, int screenHeight);
+    void CheckCollisionWithPaddle(const Paddle& paddle);
     void Draw();
+    void Reset(float posX, float posY, float initialSpeedX, float initialSpeedY);
+
 };
 
 #endif
