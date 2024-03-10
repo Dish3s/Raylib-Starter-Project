@@ -18,13 +18,14 @@ GameMode ShowMenu() {
     DrawText("Press 1 for Single Player", 100, 100, 30, WHITE);
     DrawText("Press 2 for Multiplayer", 100, 150, 30, WHITE);
 
-    if (IsKeyPressed(KEY_ONE))
+    if (IsKeyDown(KEY_ONE))
         return GameMode::SinglePlayer;
-    else if (IsKeyPressed(KEY_TWO))
+    else if (IsKeyDown(KEY_TWO))
         return GameMode::Multiplayer;
     else
         return GameMode::Menu;
 }
+
 
 int main() {
     const int screenWidth = 1800;
